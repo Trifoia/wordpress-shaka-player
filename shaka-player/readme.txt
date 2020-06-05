@@ -11,3 +11,6 @@ Optional Attributes
 - "width" - The width to make the video player
 - "poster" - Url of the image to show when loading video
 - "attributes" - Any additional attributes you may wish to add to the video element
+
+The "poster" attribute will default to using the following image:
+https://dzkzesh9fdnvq.cloudfront.net/images/attuneed-poster.png

@@ -13,11 +13,9 @@ Optional Attributes
 - "poster" - Url of the image to show when loading video
 - "attributes" - Any additional attributes you may wish to add to the video element
 
-The "poster" attribute will default to using the following image:
-https://dzkzesh9fdnvq.cloudfront.net/images/attuneed-poster.png
-
 # Settings
 The following configurations can be found in the settings menu
 Required Settings:
 - "Player URL" - A URL pointing to a "shaka-player.compiled.js" file
 - "Manifest Base" - Base to use when constructing the manifest url
+- "Default Poster URL" - A URL pointing to the poster image to use as a default

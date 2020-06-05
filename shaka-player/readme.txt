@@ -8,5 +8,6 @@ Required Attributes:
 - "source" - The source for the main video manifest
 
 Optional Attributes
-- "width" - Default "640". The width to make the video player
-- "poster" - Default "//shaka-player-demo.appspot.com/assets/poster.jpg". Video Poster Image
+- "width" - The width to make the video player
+- "poster" - Url of the image to show when loading video
+- "attributes" - Any additional attributes you may wish to add to the video element

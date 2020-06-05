@@ -1,7 +1,7 @@
 <?php
 
 function embed_html_factory($atts) {
-  $embedHtml <<<EOD
+  $embedHtml = <<<EOD
 <video id="video"
   width="$atts['width']"
   poster="$atts['poster']"

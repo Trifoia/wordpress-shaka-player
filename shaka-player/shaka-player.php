@@ -3,7 +3,7 @@
   Plugin Name: Shaka Player
   Plugin URI: https://github.com/Trifoia/wordpress-shaka-player
   description: Adds shortcodes that only display content when the user is logged in / out
-  Version: 0.1.1
+  Version: 0.1.2
   Author: Trifoia
   Author URI: https://trifoia.com
 */
@@ -18,7 +18,7 @@ function shaka_player_shortcode($atts) {
   $a = shortcode_atts( array(
     'source' => NULL,
     'width' => NULL,
-    'poster' => '//shaka-player-demo.appspot.com/assets/poster.jpg',
+    'poster' => 'https://dzkzesh9fdnvq.cloudfront.net/images/attuneed-poster.png',
     'attributes' => NULL
   ), $atts );
 

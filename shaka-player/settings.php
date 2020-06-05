@@ -62,6 +62,17 @@ class Shaka_Player_Settings {
         'helper' => 'REQUIRED',
         'supplemental' => 'Base to use when constructing the manifest url. Should end with a "/"',
         'default' => ''
+      ),
+      array(
+        'uid' => 'shaka_default_poster_url',
+        'label' => 'Default Poster URL',
+        'section' => 'general_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => 'https://posterlocation.com/poster.png',
+        'helper' => 'Optional',
+        'supplemental' => 'A URL pointing to the poster to use as a default',
+        'default' => ''
       )
     );
     foreach( $fields as $field ) {

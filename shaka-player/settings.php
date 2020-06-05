@@ -12,10 +12,8 @@ class Settings {
     $capability = 'manage_options';
     $slug = 'shaka_player';
     $callback = array( $this, 'plugin_settings_page_content' );
-    $icon = 'dashicons-admin-plugins';
-    $position = 100;
 
-    add_menu_page( $page_title, $menu_title, $capability, $slug, $callback, $icon, $position );
+    add_submenu_page( 'options-general.php', $page_title, $menu_title, $capability, $slug, $callback );
   }
 
   public function plugin_settings_page_content() {

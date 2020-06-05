@@ -54,13 +54,13 @@ class Shaka_Player_Settings {
       ),
       array(
         'uid' => 'shaka_manifest_base',
-        'label' => 'Manifest URL',
+        'label' => 'Manifest Base',
         'section' => 'general_settings',
         'type' => 'text',
         'options' => false,
-        'placeholder' => 'https://shakamanifestbase.com',
+        'placeholder' => 'https://shakamanifestbase.com/',
         'helper' => 'REQUIRED',
-        'supplemental' => 'Base to use when constructing the manifest url',
+        'supplemental' => 'Base to use when constructing the manifest url. Should end with a "/"',
         'default' => ''
       )
     );

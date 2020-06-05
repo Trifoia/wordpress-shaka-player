@@ -79,7 +79,7 @@ class Shaka_Player_Settings {
     // Check which type of field we want
     switch( $arguments['type'] ){
       case 'text': // If it is a text field
-        printf( '<input name="%1$s" id="%1$s" type="%2$s" placeholder="%3$s" value="%4$s" />', $arguments['uid'], $arguments['type'], $arguments['placeholder'], $value );
+        printf( '<input style="width: 40em;" name="%1$s" id="%1$s" type="%2$s" placeholder="%3$s" value="%4$s" />', $arguments['uid'], $arguments['type'], $arguments['placeholder'], $value );
         break;
     }
 

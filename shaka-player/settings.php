@@ -71,7 +71,7 @@ class Shaka_Player_Settings {
         'options' => false,
         'placeholder' => 'https://posterlocation.com/poster.png',
         'helper' => 'Optional',
-        'supplemental' => 'A URL pointing to the poster to use as a default',
+        'supplemental' => 'A URL pointing to the poster image to use as a default',
         'default' => ''
       )
     );

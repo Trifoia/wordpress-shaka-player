@@ -3,6 +3,7 @@
 Adds shortcodes that can be used to embed Shaka Player videos
 
 == Description ==
+# Use
 Add the [shaka_player] shortcode that will automatically embed the Shaka Player
 Required Attributes:
 - "source" - The source for the main video manifest
@@ -14,3 +15,9 @@ Optional Attributes
 
 The "poster" attribute will default to using the following image:
 https://dzkzesh9fdnvq.cloudfront.net/images/attuneed-poster.png
+
+# Settings
+The following configurations can be found in the settings menu
+Required Settings:
+- "Player URL" - A URL pointing to a "shaka-player.compiled.js" file
+- "Manifest Base" - Base to use when constructing the manifest url

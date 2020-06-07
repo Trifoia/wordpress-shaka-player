@@ -6,9 +6,11 @@ Adds shortcodes that can be used to embed Shaka Player videos
 # Use
 Add the [shaka_player] shortcode that will automatically embed the Shaka Player
 Required Attributes:
-- "source" - The source for the main video manifest. This value will be appended to the
+- "source" - The location of the main video manifest. This value will be appended to the
              "Manifest Base" setting, and the correct manifest file format will be appended,
-             depending on the platform (Dash vs HLS)
+             depending on the platform (Dash vs HLS). For example, if a manifest can be found
+             at the address "https://test.com/videos/test/dash.mpd", you would use set the
+             source attribute to "videos/test"
              
              Note: This value should not begin or end with a slash ("/")
 

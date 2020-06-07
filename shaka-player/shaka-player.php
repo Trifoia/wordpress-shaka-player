@@ -3,7 +3,7 @@
   Plugin Name: Shaka Player
   Plugin URI: https://github.com/Trifoia/wordpress-shaka-player
   description: WordPress plugin that allows embedding of the Shaka player via shortcode
-  Version: 0.2.3
+  Version: 0.2.4
   Author: Trifoia
   Author URI: https://trifoia.com
 */

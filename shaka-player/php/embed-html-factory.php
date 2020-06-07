@@ -4,7 +4,7 @@ include( PLUGIN_PATH . 'php/determine-manifest-type.php' );
 
 function embed_html_factory($atts) {
   $id = 'id=video '; // ID is always video
-  $uriBase = get_option('shaka_manifest_base') . $atts['source'] . '/'
+  $uriBase = get_option('shaka_manifest_base') . $atts['source'] . '/';
   $manifestUri = 'manifestUri=' . $uriBase . determine_manifest_type() . ' '; // A source must always be present
   $subtitleUri = 'subtitleUri=' . $uriBase . get_option('shaka_subtitles_filename') . ' ';
 

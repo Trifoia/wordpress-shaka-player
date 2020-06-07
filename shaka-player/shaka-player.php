@@ -3,7 +3,7 @@
   Plugin Name: Shaka Player
   Plugin URI: https://github.com/Trifoia/wordpress-shaka-player
   description: WordPress plugin that allows embedding of the Shaka player via shortcode
-  Version: 0.2.4
+  Version: 0.2.5
   Author: Trifoia
   Author URI: https://trifoia.com
 */
@@ -34,7 +34,7 @@ function shaka_player_shortcode( $atts ) {
   // Shaka player libraries
   wp_enqueue_script( 'compiled-shaka-player', get_option('shaka_player_url') );
 
-  // Initialization script
+  // Video initialization script
   wp_enqueue_script( 'init-shaka-player-js', plugin_dir_url(__FILE__) . 'js/init-shaka-player.js' );
 
   // Return the generated embed code

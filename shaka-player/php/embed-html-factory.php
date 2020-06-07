@@ -1,5 +1,6 @@
 <?php
 
+// PLUGIN_PATH is defined in the entry file
 include( PLUGIN_PATH . 'php/determine-manifest-type.php' );
 
 function embed_html_factory($atts) {
@@ -21,10 +22,14 @@ function embed_html_factory($atts) {
       'subtitleLanguage' => get_option('shaka_subtitles_language'),
       'subtitleKind' => get_option('shaka_subtitles_kind'),
       'subtitleMime' => get_option('shaka_subtitles_mime'),
-      'subtitleCodec' => get_option('shaka_subtitles_codec') ?: '',
+      'subtitleCodec' => get_option('shaka_subtitles_codec') ?: NULL,
       'subtitleLabel' => get_option('shaka_subtitles_label')
     );
-    $subtitleAttributes = implode(' ', $subtitleArr) . ' ';
+    // $subtitleAttributes = implode(' ', $subtitleArr) . ' ';
+    foreach ($subtitleArr as $key => $value) {
+      if ( $value === NULL ) continue;
+      $subtitleAttributes .= $key . '=' . $value . ' ';
+    }
   }
 
   $embedHtml = '<video ' . $id . $manifestUri . $width . $poster . $subtitleAttributes . $attributes . ' controls autoplay controlsList=nodownload crossorigin=anonymous></video>';

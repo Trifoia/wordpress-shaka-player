@@ -24,27 +24,30 @@ class Shaka_Player_Settings {
 
   public function plugin_settings_page_content() { ?>
     <div class="wrap">
-        <h2>Shaka Player Settings</h2>
-        <form method="post" action="options.php">
-            <?php
-                settings_fields( 'shaka_player_fields' );
-                do_settings_sections( 'shaka_player_fields' );
-                submit_button();
-            ?>
-        </form>
+      <h2>Shaka Player Settings</h2>
+      <form method="post" action="options.php">
+        <?php
+          settings_fields( 'shaka_player_fields' );
+          do_settings_sections( 'shaka_player_fields' );
+          submit_button();
+        ?>
+      </form>
     </div> <?php
   }
 
   public function setup_sections() {
-    add_settings_section( 'general_settings', 'General Settings', false, 'shaka_player_fields' );
+    add_settings_section( 'required_settings', 'Required Settings', false, 'shaka_player_fields' );
+    add_settings_section( 'optional_settings', 'Optional Settings', false, 'shaka_player_fields' );
+    add_settings_section( 'subtitle_settings', 'Subtitle Settings', false, 'shaka_player_fields' );
   }
 
   public function setup_fields() {
     $fields = array(
+      // Required settings
       array(
         'uid' => 'shaka_player_url',
         'label' => 'Player URL',
-        'section' => 'general_settings',
+        'section' => 'required_settings',
         'type' => 'text',
         'options' => false,
         'placeholder' => 'https://shakaplayerurl.com/shaka-player.compiled.js',
@@ -55,7 +58,7 @@ class Shaka_Player_Settings {
       array(
         'uid' => 'shaka_manifest_base',
         'label' => 'Manifest Base',
-        'section' => 'general_settings',
+        'section' => 'required_settings',
         'type' => 'text',
         'options' => false,
         'placeholder' => 'https://shakamanifestbase.com/',
@@ -63,16 +66,86 @@ class Shaka_Player_Settings {
         'supplemental' => 'Base to use when constructing the manifest url. Should end with a "/"',
         'default' => ''
       ),
+
+      // Optional Settings
       array(
         'uid' => 'shaka_default_poster_url',
         'label' => 'Default Poster URL',
-        'section' => 'general_settings',
+        'section' => 'optional_settings',
         'type' => 'text',
         'options' => false,
         'placeholder' => 'https://posterlocation.com/poster.png',
         'helper' => 'Optional',
         'supplemental' => 'A URL pointing to the poster image to use as a default',
         'default' => ''
+      ),
+
+      // Subtitle Settings
+      array(
+        'uid' => 'shaka_subtitles_filename',
+        'label' => 'Filename',
+        'section' => 'subtitle_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => 'subtitles.0.vtt',
+        'helper' => 'REQUIRED',
+        'supplemental' => 'Name of the subtitle file',
+        'default' => 'subtitles.0.vtt'
+      ),
+      array(
+        'uid' => 'shaka_subtitles_language',
+        'label' => 'Language',
+        'section' => 'subtitle_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => 'en',
+        'helper' => 'REQUIRED',
+        'supplemental' => 'The language of the text',
+        'default' => 'en'
+      ),
+      array(
+        'uid' => 'shaka_subtitles_kind',
+        'label' => 'Kind',
+        'section' => 'subtitle_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => 'subtitle',
+        'helper' => 'REQUIRED',
+        'supplemental' => 'The kind of subtitles. Can be "caption" or "subtitle"',
+        'default' => 'subtitle'
+      ),
+      array(
+        'uid' => 'shaka_subtitles_mime',
+        'label' => 'MIME',
+        'section' => 'subtitle_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => 'text/vtt',
+        'helper' => 'REQUIRED',
+        'supplemental' => 'The MIME type of the subtitle file',
+        'default' => 'text/vtt'
+      ),
+      array(
+        'uid' => 'shaka_subtitles_codec',
+        'label' => 'Codec',
+        'section' => 'subtitle_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => '',
+        'helper' => 'Optional',
+        'supplemental' => 'The codec to use. Should generally be left blank',
+        'default' => ''
+      ),
+      array(
+        'uid' => 'shaka_subtitles_label',
+        'label' => 'Label',
+        'section' => 'subtitle_settings',
+        'type' => 'text',
+        'options' => false,
+        'placeholder' => 'English',
+        'helper' => 'REQUIRED',
+        'supplemental' => 'The label used to identify the text track',
+        'default' => 'English'
       )
     );
     foreach( $fields as $field ) {

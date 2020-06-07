@@ -2,8 +2,8 @@
 /*
   Plugin Name: Shaka Player
   Plugin URI: https://github.com/Trifoia/wordpress-shaka-player
-  description: Adds shortcodes that only display content when the user is logged in / out
-  Version: 0.2.2
+  description: WordPress plugin that allows embedding of the Shaka player via shortcode
+  Version: 0.2.3
   Author: Trifoia
   Author URI: https://trifoia.com
 */
@@ -20,8 +20,10 @@ function shaka_player_shortcode( $atts ) {
     'source' => NULL,
     'width' => NULL,
     'poster' => get_option('shaka_default_poster_url'),
-    'attributes' => NULL
+    'attributes' => NULL,
+    'subtitles' => 'true'
   ), $atts );
+  $a['subtitles'] = filter_var($a['subtitles'], FILTER_VALIDATE_BOOLEAN);
 
   if ( $a['source'] === NULL ) {
     print( 'Shaka Player Shortcode Error: No video source provided' );

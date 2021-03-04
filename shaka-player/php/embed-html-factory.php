@@ -32,7 +32,7 @@ function embed_html_factory($atts) {
     }
   }
 
-  $embedHtml = '<video ' . $id . $manifestUri . $width . $poster . $subtitleAttributes . $attributes . ' controls autoplay controlsList=nodownload crossorigin=anonymous></video>';
+  $embedHtml = '<video ' . $id . $manifestUri . $width . $poster . $subtitleAttributes . $attributes . ' controls controlsList=nodownload crossorigin=anonymous></video>';
 
   return $embedHtml;
 }
